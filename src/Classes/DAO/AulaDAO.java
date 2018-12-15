@@ -28,14 +28,13 @@ public class AulaDAO {
         PreparedStatement stmt = null;
         
         try{
-            stmt = con.prepareStatement("INSERT INTO aula (idAula,professor,disciplina,descricao,turma,lcal,hora) VALUES (?,?,?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO aula (idAula,professor,disciplina,turma,lcal,hora) VALUES (?,?,?,?,?,?)");
             stmt.setInt(1,a.getIdAula());
             stmt.setString(2,a.getProfessor());
             stmt.setString(3,a.getDisciplina());
-            stmt.setString(4,a.getDescricao());
-            stmt.setString(5,a.getTurma());
-            stmt.setString(6,a.getLocal());
-            stmt.setString(7,a.getHora());
+            stmt.setString(4,a.getTurma());
+            stmt.setString(5,a.getLocal());
+            stmt.setString(6,a.getHora());
             
             stmt.executeUpdate();
                   
@@ -91,14 +90,13 @@ public class AulaDAO {
         PreparedStatement stmt = null;
         
         try{
-            stmt = con.prepareStatement("UPDATE aula SET professor =?, disciplina=? ,descricao=? ,turma=?,local=?,hora=? WHERE idAula=?");
+            stmt = con.prepareStatement("UPDATE aula SET professor =?, disciplina=? ,turma=?,local=?,hora=? WHERE idAula=?");
             stmt.setString(1,a.getProfessor());
             stmt.setString(2,a.getDisciplina());
-            stmt.setString(3,a.getDescricao());
-            stmt.setString(4, a.getTurma());
-            stmt.setString(5,a.getLocal());
-            stmt.setString(6,a.getHora());
-            stmt.setInt(7,a.getIdAula());
+            stmt.setString(3, a.getTurma());
+            stmt.setString(4,a.getLocal());
+            stmt.setString(5,a.getHora());
+            stmt.setInt(6,a.getIdAula());
             
             stmt.executeUpdate();
                         
@@ -116,7 +114,7 @@ public class AulaDAO {
         PreparedStatement stmt = null;
         
         try {
-            stmt = con.prepareStatement("DELETE FROM aula WHERE matricula = ?");
+            stmt = con.prepareStatement("DELETE FROM aula WHERE idAula = ?");
          
             stmt.setInt(1, a.getIdAula());
             stmt.executeUpdate();

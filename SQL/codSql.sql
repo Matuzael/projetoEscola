@@ -32,3 +32,14 @@ create table turma(
     turno varchar(100),
     primary key(idTurma)
 );
+
+create table aula(
+	idAula int,
+    professor varchar(100),
+    disciplina varchar(100),
+    turma varchar(100),
+    lcal varchar(100),
+    hora varchar(100),
+    primary key(idAula)
+    );
+    

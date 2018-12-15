@@ -5,19 +5,16 @@
  */
 package Views;
 
-import Classes.Aula;
-import Classes.DAO.AulaDAO;
-
 /**
  *
  * @author matuz
  */
-public class ViewMarcarAula extends javax.swing.JFrame {
+public class ViewAtualizarAula extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewMarcarAula
+     * Creates new form ViewAtualizarAula
      */
-    public ViewMarcarAula() {
+    public ViewAtualizarAula() {
         initComponents();
     }
 
@@ -30,42 +27,63 @@ public class ViewMarcarAula extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtNome = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
+        txtLocal = new javax.swing.JTextField();
+        txtHorario = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        bMarcar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
+        txtTurma = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtProfessor = new javax.swing.JTextField();
         txtDisciplina = new javax.swing.JTextField();
-        txtLocal = new javax.swing.JTextField();
-        txtHorario = new javax.swing.JTextField();
-        bMarcar = new javax.swing.JButton();
-        txtTurma = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-
-        txtNome.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 0));
+
+        txtLocal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        txtHorario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtHorario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtHorarioActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Marcar Aula");
 
+        bMarcar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bMarcar.setText("Atualizar");
+        bMarcar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bMarcarActionPerformed(evt);
+            }
+        });
+
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Professor:");
 
+        txtTurma.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Local:");
+
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Turma:");
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -80,30 +98,6 @@ public class ViewMarcarAula extends javax.swing.JFrame {
         txtProfessor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         txtDisciplina.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        txtLocal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        txtHorario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtHorario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHorarioActionPerformed(evt);
-            }
-        });
-
-        bMarcar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        bMarcar.setText("Marcar");
-        bMarcar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bMarcarActionPerformed(evt);
-            }
-        });
-
-        txtTurma.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Turma:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -187,11 +181,11 @@ public class ViewMarcarAula extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -202,27 +196,12 @@ public class ViewMarcarAula extends javax.swing.JFrame {
     }//GEN-LAST:event_txtHorarioActionPerformed
 
     private void bMarcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMarcarActionPerformed
-        Aula a = new Aula();
-        AulaDAO adao = new AulaDAO();
-        
-        int idAula = (int) (Math.random() * 10000000) ;
-        
-        a.setIdAula(idAula);
-        a.setProfessor(txtProfessor.getText());
-        a.setDisciplina(txtDisciplina.getText());
-        a.setTurma(txtTurma.getText());
-        a.setLocal(txtLocal.getText());
-        a.setHora(txtHorario.getText());
-        
-        adao.create(a);
-        
-        txtProfessor.setText("");
-        txtDisciplina.setText("");
-        txtTurma.setText("");
-        txtLocal.setText("");
-        txtHorario.setText("");     
+       
     }//GEN-LAST:event_bMarcarActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -237,20 +216,20 @@ public class ViewMarcarAula extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewMarcarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAtualizarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewMarcarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAtualizarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewMarcarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAtualizarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewMarcarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewAtualizarAula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewMarcarAula().setVisible(true);
+                new ViewAtualizarAula().setVisible(true);
             }
         });
     }
@@ -268,7 +247,6 @@ public class ViewMarcarAula extends javax.swing.JFrame {
     private javax.swing.JTextField txtDisciplina;
     private javax.swing.JTextField txtHorario;
     private javax.swing.JTextField txtLocal;
-    private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtProfessor;
     private javax.swing.JTextField txtTurma;
     // End of variables declaration//GEN-END:variables

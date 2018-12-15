@@ -13,7 +13,6 @@ public class Aula {
     private int idAula;
     private String professor;
     private String disciplina;
-    private String descricao;
     private String turma;
     private String local;
     private String hora;
@@ -40,14 +39,6 @@ public class Aula {
 
     public void setDisciplina(String disciplina) {
         this.disciplina = disciplina;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescrição(String descrição) {
-        this.descricao = descrição;
     }
 
     public String getTurma() {
