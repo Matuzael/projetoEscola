@@ -129,21 +129,48 @@ public class AulaDAO {
         }
             finally{
                 ConnectionFactory.closeConnection(con, stmt);
-        }  
+        } 
     }
         
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-}
+        public List<Aula> readAulasMarcadas(String turma){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        List<Aula> aulas = new ArrayList<>();
+        
+        try {
+            stmt = con.prepareStatement("Select * FROM aula WHERE turma=?");
+            stmt.setString(1, turma);
+            rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                
+                if( rs.getString("turma").equals(turma)){
+                Aula a = new Aula();
+                
+                a.setIdAula(rs.getInt("idAula"));
+                a.setProfessor(rs.getString("professor"));
+                a.setDisciplina(rs.getString("disciplina"));
+                a.setTurma(rs.getString("turma"));
+                a.setLocal(rs.getString("lcal"));
+                a.setHora(rs.getString("hora"));
+                aulas.add(a);
+                }
+                
+                        
+            }
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AlunoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            
+            ConnectionFactory.closeConnection(con, stmt, rs);
+                    }
+        
+        return aulas;
+        }
+           
+    }
