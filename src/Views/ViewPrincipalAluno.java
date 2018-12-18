@@ -126,7 +126,8 @@ public class ViewPrincipalAluno extends javax.swing.JFrame {
 
     private void bMarcarAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMarcarAulaActionPerformed
         this.dispose();
-        new ViewMarcarAula().setVisible(true);
+        new ViewCalcularNota().setVisible(true);
+        
     }//GEN-LAST:event_bMarcarAulaActionPerformed
 
     /**

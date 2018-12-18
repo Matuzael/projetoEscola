@@ -141,12 +141,15 @@ public class TelaDeLogin extends javax.swing.JFrame {
        
       if(dao.checkLogin(txtLogin.getText(),txtSenha.getText())){
           if(txtLogin.getText().equals("aluno")){
+              this.dispose();
               new ViewPrincipalAluno().setVisible(true);
           }
           else if(txtLogin.getText().equals("diretor")){
+             this.dispose();
              new TelaPrincipal().setVisible(true); 
           }
           else if (txtLogin.getText().equals("professor")){
+              this.dispose();
               new TelaPrincipalProfessor().setVisible(true);
           }
           
